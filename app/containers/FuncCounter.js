@@ -32,7 +32,7 @@ function mapStateToProps(state) {
 // ans. whenever component created first time
 // returns props with functions
 // reset, increment, decrement
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
     return {
         increment: function() {
             const action = actions.increment(1);

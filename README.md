@@ -167,3 +167,51 @@ https://gist.github.com/gopalakrishnan-subramani/621c419490caaf8a4aaeadc2d222d85
 
 Refer https://github.com/facebook/react-native/issues/21241
 
+## EXPO
+
+No SDK, JDK needed
+Node.js needed
+Ensure Computer and Phone connected on same wifi
+
+https://facebook.github.io/react-native/docs/getting-started.html
+
+Quick start
+
+> npm install -g expo-cli
+> expo init AwesomeProject
+
+> cd AwesomeProject
+> npm start
+
+Install Expo app from play store, then scan the barcode
+
+# React Native
+
+1. node.js
+2. JDK
+3. Android Studio [SDK Manager, Android SDK Platform API 28, 27, 26]
+4. Android Studio [Google Play for Latest Image 28]
+5. JAVA_HOME ENV Var c:\program files\java\jdk1.8xyz
+6. ANDROID_HOME ENV set to c:/Users/krish/APPDATA..../Android/sdk
+7. VS Code [React Native Tools extention]
+8. ADD C:\users\name\appdata\local\android\sdk\platform-tools to PATH
+9. ADD C:\users\name\appdata\local\android\sdk\tools to PATH
+10. Chrome
+
+# Set up CLI 
+
+React cli to create, build, test react applications
+
+```
+npm install -g react-native-cli
+```
+
+# Create new app
+
+react-native init AwesomeProject
+
+cd AwesomeProject
+
+npm start
+
+react-native  run-android
