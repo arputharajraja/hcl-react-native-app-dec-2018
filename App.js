@@ -13,6 +13,10 @@ import HomeScreen from './app/components/HomeScreen';
 import AboutScreen from './app/components/AboutScreen';
 import ContactScreen from './app/components/ContactScreen';
 
+import CameraScreen from './app/components/CameraScreen';
+
+import FileSys from './app/components/FileSys';
+
 import {Counter} from './app/components/Counter';
 
 import ReactReduxCounter 
@@ -61,6 +65,12 @@ const CompanyStackNavigator = createStackNavigator({
   ReactCart: {
     screen: ReactCart
   },
+  FileSys: {
+    screen: FileSys
+  },
+  CameraScreen: {
+    screen: CameraScreen
+  }
 });
 
 

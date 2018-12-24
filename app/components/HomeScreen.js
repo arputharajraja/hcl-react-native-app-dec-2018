@@ -68,6 +68,15 @@ export default class HomeScreen extends React.Component {
                         
             
             
+
+            <Button onPress={ () => this.gotoPage('FileSys')}
+                                                                    title="FileSys" />
+                        
+            
+            
+            <Button onPress={ () => this.gotoPage('CameraScreen')}
+                                                        title="CameraScreen" />
+            
             </View>
         )
     }
