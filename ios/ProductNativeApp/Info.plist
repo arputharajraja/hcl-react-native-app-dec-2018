@@ -83,5 +83,8 @@
 <key>NSMicrophoneUsageDescription</key>
 <string>Your message to user when the microphone is accessed for the first time</string>
 
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location to track you</string>
+
 </dict>
 </plist>

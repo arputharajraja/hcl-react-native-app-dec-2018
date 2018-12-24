@@ -1,8 +1,17 @@
 // app/components/CameraScreen.js
 
 import React from 'react';
-import {View, Button, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, 
+        Button, 
+        Text, 
+        StyleSheet, 
+        TouchableOpacity,
+        CameraRoll,
+        Alert
+      } from 'react-native';
 import { RNCamera } from 'react-native-camera';
+
+import Permissions from 'react-native-permissions'
 
 
 export default class CameraScreen extends React.Component {
@@ -15,7 +24,19 @@ export default class CameraScreen extends React.Component {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options)
+
       console.log(data.uri);
+      //const response = await Permissions.check('photo')
+      const response =  await Permissions.request('photo') 
+      Alert.alert("Permission", "" + response);
+
+      if (response == 'authorized') {
+        await CameraRoll.saveToCameraRoll( data.uri, "photo" )
+
+      } else {
+        Alert.alert("Permission", "Sorry, no permission " + response)
+      }
+
     }
   };
   render() {
@@ -28,6 +49,7 @@ export default class CameraScreen extends React.Component {
             style = {styles.preview}
             type={RNCamera.Constants.Type.back}
             flashMode={RNCamera.Constants.FlashMode.on}
+ 
             permissionDialogTitle={'Permission to use camera'}
             permissionDialogMessage={'We need your permission to use your camera phone'}
             onGoogleVisionBarcodesDetected={({ barcodes }) => {

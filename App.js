@@ -14,6 +14,7 @@ import AboutScreen from './app/components/AboutScreen';
 import ContactScreen from './app/components/ContactScreen';
 
 import CameraScreen from './app/components/CameraScreen';
+import GeoLocation from './app/components/GeoLocation';
 
 import FileSys from './app/components/FileSys';
 
@@ -70,6 +71,9 @@ const CompanyStackNavigator = createStackNavigator({
   },
   CameraScreen: {
     screen: CameraScreen
+  },
+  GeoLocation: {
+    screen: GeoLocation
   }
 });
 

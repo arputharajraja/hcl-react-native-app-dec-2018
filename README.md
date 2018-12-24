@@ -66,6 +66,20 @@ npm install react-native-fs --save
 react-native link react-native-fs
 ```
 
+
+
+
+
+## Install React Native Camera
+
+```
+npm install react-native-camera --save
+
+react-native link react-native-camera 
+```
+
+
+
 For Android
 
 ```
@@ -80,7 +94,7 @@ For Android
 
 for iosm, add to plist info
 
-
+```
 <key>NSCameraUsageDescription</key>
 <string>Your message to user when the camera is accessed for the first time</string>
 
@@ -92,19 +106,48 @@ for iosm, add to plist info
 <key>NSMicrophoneUsageDescription</key>
 <string>Your message to user when the microphone is accessed for the first time</string>
 
+```
 
+# Permission
 
-
-
-## Install React Native Camera
+https://www.npmjs.com/package/react-native-permissions
 
 ```
-npm install react-native-camera --save
+npm install --save react-native-permissions
 
-react-native link react-native-camera 
+react-native link react-native-permissions
+
 ```
+
+
+## Geo Location
+
+Android manifest
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+```
+
+
+for ios
+
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>We need your location to track you</string>
+```
+
+
+## Debug
+
+http://localhost:8081/debugger-ui/
+
+
 
 start this in different command prompt, runs the bundler with clean cache
+
+
 
 npm start
 
@@ -112,4 +155,15 @@ npm start
 react-native run-android
 
 react-native run-ios
+
+
+
+Other links
+
+https://gist.github.com/gopalakrishnan-subramani/621c419490caaf8a4aaeadc2d222d85a
+
+
+## TEST
+
+Refer https://github.com/facebook/react-native/issues/21241
 
