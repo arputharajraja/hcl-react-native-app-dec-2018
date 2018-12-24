@@ -1,7 +1,17 @@
 // app/components/HomeScreen.js
 
 import React from 'react';
-import {View, Button, Text} from 'react-native';
+import {View, Button, Text, NativeModules, Alert, ScrollView} from 'react-native';
+
+import ButtonView from './ButtonView';
+
+// 
+// From Java 
+// public String getName() {
+//     return "ToastExample";
+// }
+
+const ToastExample = NativeModules.ToastExample;
 
 export default class HomeScreen extends React.Component {
 
@@ -19,6 +29,19 @@ export default class HomeScreen extends React.Component {
         this.props.navigation.navigate(pageName);
     };
 
+    callJavaModule = () => {
+        console.log("CAlling java");
+        ToastExample.show("Hello Java from JS", 5000);
+    }
+
+
+    callJavaModule2 = () => {
+        console.log("CAlling java 2 str");
+        ToastExample.addTwoString("REact", "Native")
+                     .then ((result) => {
+                        Alert.alert("Java Int", result);
+                     })
+    }
 
     gotoContact = () => {
         const address = {
@@ -33,8 +56,17 @@ export default class HomeScreen extends React.Component {
 
     render() {
         return (
+            <ScrollView>
             <View>
+                <ButtonView  height={50} width={200} />
+                <ButtonView textTitle="From VDOM"  height={50} width={200}  />
                 <Text style={ {fontSize: 24} }> Home Page</Text>
+
+                <Button onPress={ () => this.callJavaModule()}
+                        title="Call Java" />
+
+            <Button onPress={ () => this.callJavaModule2()}
+                                    title="Call Java two str" />
 
                 <Button onPress={ () => this.gotoPage('About')}
                         title="About" />
@@ -82,6 +114,7 @@ export default class HomeScreen extends React.Component {
             
             
             </View>
+            </ScrollView>
         )
     }
 }

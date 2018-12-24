@@ -30,7 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
             new RNCameraPackage(),
             new RNFSPackage(),
             new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new ToastPackage(),
+            new ButtonViewPackage(null)
       );
     }
 
